@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Orto-Bishkek | Медицинские ортопедические корсеты в Кыргызстане</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter & Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e2a3e;
+            line-height: 1.4;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / nav */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b3b3f;
+            letter-spacing: -0.3px;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: #2c6e6b;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e3a3f;
+            transition: color 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #0f7b6e;
+        }
+
+        .btn-outline {
+            border: 1.5px solid #0f7b6e;
+            background: transparent;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: #0f7b6e;
+            transition: 0.2s;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background: #0f7b6e;
+            color: white;
+        }
+
+        .btn-primary {
+            background: #0f7b6e;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: #0a5f55;
+            transform: translateY(-2px);
+        }
+
+        /* hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin: 40px 0 60px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #e6f7f4;
+            color: #0f7b6e;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0b2b2e;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #2d4a53;
+            margin-bottom: 30px;
+            max-width: 90%;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            font-weight: 700;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            color: #0f7b6e;
+        }
+
+        .hero-img {
+            flex: 1;
+            background: #eef9f6;
+            border-radius: 32px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 24px;
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1 / 0.9;
+        }
+
+        /* products grid */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0b3b3f;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #4a6772;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2efec;
+            padding: 24px 20px;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(15, 123, 110, 0.15);
+            border-color: #c0dfd9;
+        }
+
+        .product-icon {
+            font-size: 2.7rem;
+            color: #0f7b6e;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #1f5e58;
+            margin: 12px 0;
+        }
+
+        .product-desc {
+            color: #42636e;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        /* преимущества */
+        .advantages {
+            background: #f8fefc;
+            border-radius: 48px;
+            padding: 60px 40px;
+            margin: 70px 0;
+        }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .adv-item {
+            text-align: center;
+        }
+
+        .adv-icon {
+            font-size: 2.5rem;
+            background: #e2f3ef;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            margin: 0 auto 20px;
+            color: #0f7b6e;
+        }
+
+        /* about production */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-list i {
+            color: #0f7b6e;
+        }
+
+        .about-img {
+            flex: 1;
+            background: #eaf3f0;
+            border-radius: 32px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* footer */
+        .footer {
+            background: #0b2b2e;
+            color: #d9eae7;
+            padding: 48px 0 24px;
+            margin-top: 70px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .footer a {
+            color: #bcd9d4;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 1.4rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #2c534e;
+            font-size: 0.85rem;
+        }
+
+        /* модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 500px;
+            width: 90%;
+            border-radius: 32px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 24px;
+            top: 20px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 24px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+        }
+
+        @media (max-width: 780px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 99;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="container">
+    <div class="navbar">
+        <div class="logo">
+            <h1>Orto-Bishkek</h1>
+            <p>медицинские корсеты • реабилитация</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#products">Изделия</a></li>
+            <li><a href="#about">Производство</a></li>
+            <li><a href="#advantages">Преимущества</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <button class="btn-outline" id="openModalBtn">Заказать звонок</button>
+    </div>
+</nav>
+
+<main class="container">
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-stethoscope"></i> Made in Kyrgyzstan</span>
+            <h1>Ортопедические корсеты <br> для здоровой спины</h1>
+            <p>Первое локальное производство медицинских ортопедических изделий в Кыргызстане. Качество, доступная цена и индивидуальный подход.</p>
+            <button class="btn-primary" id="heroOrderBtn"><i class="fas fa-shopping-cart"></i> Подобрать корсет</button>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">1200+</span><br>пациентов</div>
+                <div class="stat-item"><span class="stat-number">15+</span><br>моделей</div>
+                <div class="stat-item"><span class="stat-number">100%</span><br>гипоаллергенно</div>
+            </div>
+        </div>
+        <div class="hero-img">
+            <!-- медицинский корсет (символическое изображение сгенерированно как иконка) -->
+            <div style="background:#cfe9e2; border-radius: 32px; padding: 24px;">
+                <i class="fas fa-spine" style="font-size: 8rem; color: #0f7b6e;"></i>
+                <p style="margin-top: 12px;">Пояснично-крестцовый корсет</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Продукция -->
+    <div id="products">
+        <h2 class="section-title">Наша продукция</h2>
+        <p class="section-sub">Сертифицированные медицинские изделия для разных отделов позвоночника</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-bezier-curve"></i></div>
+                <h3>Корсет поясничный</h3>
+                <div class="product-price">от 2 200 сом</div>
+                <p class="product-desc">Полужесткая фиксация, ребра жесткости, дышащие ткани. При грыжах, протрузиях, радикулите.</p>
+                <button class="btn-outline order-product" data-name="Корсет поясничный">Заказать</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-user-check"></i></div>
+                <h3>Реклинатор (корректор осанки)</h3>
+                <div class="product-price">1 800 сом</div>
+                <p class="product-desc">Для детей и взрослых. Профилактика сколиоза, сутулости. Регулируемые лямки.</p>
+                <button class="btn-outline order-product" data-name="Реклинатор">Заказать</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-baby-carriage"></i></div>
+                <h3>Дородовый/послеродовый бандаж</h3>
+                <div class="product-price">2 500 сом</div>
+                <p class="product-desc">Поддержка живота и спины, снижение нагрузки, эластичный и комфортный.</p>
+                <button class="btn-outline order-product" data-name="Бандаж дородовый">Заказать</button>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Грудопоясничный корсет жесткий</h3>
+                <div class="product-price">4 200 сом</div>
+                <p class="product-desc">Послеоперационная реабилитация, переломы позвонков. Индивидуальный подбор.</p>
+                <button class="btn-outline order-product" data-name="Грудопоясничный корсет">Заказать</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Преимущества -->
+    <div id="advantages" class="advantages">
+        <h2 class="section-title">Почему Orto-Bishkek?</h2>
+        <div class="adv-grid">
+            <div class="adv-item"><div class="adv-icon"><i class="fas fa-tag"></i></div><h3>Цена ниже импорта</h3><p>На 30-40% дешевле аналогов из Европы и Турции</p></div>
+            <div class="adv-item"><div class="adv-icon"><i class="fas fa-ruler-combined"></i></div><h3>Индивидуальный пошив</h3><p>По меркам пациента с учётом анатомии</p></div>
+            <div class="adv-item"><div class="adv-icon"><i class="fas fa-certificate"></i></div><h3>Регистрация Минздрав КР</h3><p>Полная сертификация как медицинское изделие</p></div>
+            <div class="adv-item"><div class="adv-icon"><i class="fas fa-truck"></i></div><h3>Доставка по Бишкеку</h3><p>Бесплатная подгонка в течение 6 месяцев</p></div>
+        </div>
+    </div>
+
+    <!-- О производстве -->
+    <div id="about" class="about">
+        <div class="about-text">
+            <h2><i class="fas fa-microscope"></i> Локальное производство</h2>
+            <p>Собственный цех в г. Бишкек. Мы используем гипоаллергенные ткани (Турция, Китай), ребра жесткости из медицинского пластика. Контроль качества на всех этапах.</p>
+            <ul class="about-list">
+                <li><i class="fas fa-check-circle"></i> Сертифицированные материалы</li>
+                <li><i class="fas fa-check-circle"></i> Врач-ортопед в команде разработки</li>
+                <li><i class="fas fa-check-circle"></i> Примерка и корректировка</li>
+                <li><i class="fas fa-check-circle"></i> Работаем с госучреждениями и частными клиниками</li>
+            </ul>
+            <button class="btn-primary" id="aboutContactBtn"><i class="fab fa-whatsapp"></i> Получить консультацию</button>
+        </div>
+        <div class="about-img">
+            <i class="fas fa-tshirt" style="font-size: 5rem; color:#0f7b6e; margin-bottom: 16px; display: inline-block;"></i>
+            <p style="margin-top: 20px; font-weight: 500;">Современное швейное оборудование<br>JACK | профессиональная команда</p>
+        </div>
+    </div>
+
+    <!-- Партнеры/статистика (необязательно) -->
+    <div style="background: #eef5f2; border-radius: 32px; padding: 32px; text-align: center; margin: 30px 0;">
+        <p style="font-weight: 600; font-size: 1.2rem;"><i class="fas fa-hand-holding-heart"></i> Работаем с аптеками: «Неман-фарм», «Фармамир», «Меди Лайв», MedMarket и реабилитационными центрами КР</p>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-logo">
+                <h3>Orto-Bishkek</h3>
+                <p>Забота о позвоночнике – наша миссия</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Контакты</h4>
+                <p><i class="fas fa-phone-alt"></i> +996 (550) 12-34-56</p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Бишкек, ул. Матросова, 22 (промзона)</p>
+                <p><i class="fas fa-envelope"></i> info@orto-bishkek.kg</p>
+            </div>
+            <div>
+                <h4>Режим работы</h4>
+                <p>Пн-Пт: 9:00 – 18:00</p>
+                <p>Сб: 10:00 – 15:00 (примерка)</p>
+                <p>Вс: по записи</p>
+            </div>
+            <div>
+                <h4>Информация</h4>
+                <p><a href="#">Регистрационное удостоверение</a></p>
+                <p><a href="#">Сертификаты</a></p>
+                <p><a href="#">Партнёрам</a></p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Orto-Bishkek — Первое отечественное производство медицинских ортопедических корсетов. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/996550123456?text=Здравствуйте!%20Хочу%20подобрать%20ортопедический%20корсет" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp" style="font-size: 1.5rem;"></i> Написать
+</a>
+
+<!-- Modal -->
+<div id="callbackModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Оставьте заявку</h3>
+        <p>Наш специалист свяжется с вами для подбора корсета и уточнения деталей.</p>
+        <form id="callbackForm">
+            <div class="form-group"><input type="text" placeholder="Ваше имя" required id="nameInput"></div>
+            <div class="form-group"><input type="tel" placeholder="Телефон / WhatsApp" required id="phoneInput"></div>
+            <div class="form-group"><textarea rows="2" placeholder="Комментарий (модель, вопрос)"></textarea></div>
+            <button type="submit" class="btn-primary" style="width:100%">Отправить</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // модальное окно
+    const modal = document.getElementById('callbackModal');
+    const openBtns = document.querySelectorAll('#openModalBtn, #heroOrderBtn, #aboutContactBtn');
+    const closeModalBtn = document.querySelector('.close-modal');
+    const orderProductBtns = document.querySelectorAll('.order-product');
+
+    function openModal(productName = '') {
+        modal.style.display = 'flex';
+        if (productName) {
+            const textarea = modal.querySelector('textarea');
+            if (textarea) textarea.value = `Интересует товар: ${productName}`;
+        }
+    }
+    openBtns.forEach(btn => btn.addEventListener('click', () => openModal()));
+    orderProductBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const product = btn.getAttribute('data-name');
+            openModal(product);
+        });
+    });
+    closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+    
+    // форма имитация отправки
+    const form = document.getElementById('callbackForm');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Спасибо! Мы свяжемся с вами в ближайшее время. (тестовый режим)');
+        modal.style.display = 'none';
+        form.reset();
+    });
+    
+    // плавный скролл для навигации
+    document.querySelectorAll('.nav-links a, .btn-primary[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const hash = this.getAttribute('href');
+            if (hash && hash.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(hash);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    // также обработка для контактной кнопки в about
+    document.querySelector('#aboutContactBtn')?.addEventListener('click', () => openModal());
+    // маленький фикс для подменю
+    const heroOrderBtn = document.getElementById('heroOrderBtn');
+    if(heroOrderBtn) heroOrderBtn.addEventListener('click', () => openModal());
+    
+    // отображение номера телефона в ватсап
+    console.log('Коммерческий сайт Orto-Bishkek успешно загружен');
+</script>
+</body>
+</html>
